@@ -1,0 +1,18 @@
+# [# th:utext="${scheduledevent.simpleName}" /]
+
+## Infomation
+
+| Item | Value |
+|:---|:---|
+| Package | [# th:utext="${scheduledevent.packageName}" /] |
+| ScheduledEvent | [# th:utext="${scheduledevent.simpleName}" /] |
+
+## Definition
+
+| Item | Value |
+|:---|:---|
+| active | [# th:utext="${scheduledevent.active}" /] |
+| interval | [# th:utext="${scheduledevent.interval}" /] |
+| occursAt | [# th:utext="${scheduledevent.occursAt}" /] |
+| periodic | [# th:utext="${scheduledevent.periodic}" /] |
+| topic | [# th:utext="${scheduledevent.topic}" /] |

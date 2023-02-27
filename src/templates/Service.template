@@ -1,0 +1,36 @@
+# [# th:utext="${service.simpleName}" /]
+
+[# th:utext="${service.description}" /]
+
+## Infomation
+
+| Item | Value |
+|:--|:--|
+| Package | [# th:utext="${service.packageName}" /] |
+| Service | [# th:utext="${service.simpleName}" /] |
+| replicationFactor | [# th:utext="${service.replicationFactor}" /] |
+| active |  [# th:utext="${service.active}" /] |
+
+## GlobalType
+
+[# th:utext="${service.globalType}" /]
+
+## PartitionedType
+
+## Interface
+
+## INBOUND
+[# th:each="eventType : ${service.inbounds}"]
+- [# th:utext="'[' + ${eventType.name} + ']'" /][# th:utext="'(..' + ${eventType.implementingResourcePath} + '.md)'" /]
+[/]
+## OUTBOUND
+[# th:each="eventType : ${service.outbounds}"]
+### [# th:utext="'[' + ${eventType.name} + ']'" /][# th:utext="'(..' + ${eventType.implementingEventPath} + '.md)'" /]
+
+[# th:utext="${eventType.description}" /]
+
+| Item | Value |
+|:--|:--|
+| eventSchema | [# th:utext="${eventType.eventSchema}" /] |
+| isReliable | [# th:utext="${eventType.isReliable}" /] |
+[/]

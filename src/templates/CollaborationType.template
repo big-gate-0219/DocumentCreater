@@ -1,0 +1,82 @@
+# [[${collaborationType.collaborationTypeName}]]
+
+[[${collaborationType.description}]]
+
+## Infomation
+
+| 項目 | 概要 |
+|:---|:---|
+| Package | [[${collaborationType.packageName}]] |
+| Service | [[${collaborationType.ServiceName}]] |
+| CollaborationType | [[${collaborationType.collaborationTypeName}]] |
+
+## フローチャート
+
+``` mermaid
+flowchart TD[# th:each="flowPart : ${collaborationType.flowParts}"]
+    [(${flowPart.from})] --> [(${flowPart.to})][/]
+```
+
+## Activityの説明
+[# th:each="activity : ${collaborationType.activities}"]
+### [[${activity.name}]]
+
+[[${activity.description}]]
+
+#### パターン
+
+[[ ${activity.pattern} ]]
+
+#### 設定
+
+[# th:if="${activity.pattern=='PublishToTopic'}"]
+| Item | Value |
+|:---|:---|
+| topic | [# th:utext="${activity.configuration.topic}" /] |
+| catalog | [# th:utext="${activity.configuration.catalog}" /] |
+| event | [# th:utext="${activity.configuration.event}" /] |
+| processedByClause | [# th:utext="${activity.configuration.processedByClause}" /] |
+[/]
+[# th:if="${activity.pattern=='Procedure'}"]
+| Item | Value |
+|:---|:---|
+| procedure | [# th:utext="${activity.configuration.procedure}" /] |
+| imports | [# th:utext="${activity.configuration.imports}" /] |
+| partitionKey | [# th:utext="${activity.configuration.partitionKey}" /] |
+| returnBehavior | [# th:utext="${activity.configuration.returnBehavior}" /] |
+| returnProperty | [# th:utext="${activity.configuration.returnProperty}" /] |
+| schema | [# th:utext="${activity.configuration.schema}" /] |
+[/]
+[# th:if="${activity.pattern=='EventStream'}"]
+| Item | Value |
+|:---|:---|
+| condition | [# th:utext="${activity.configuration.condition}" /] |
+| eventTypeName | [# th:utext="${activity.configuration.eventTypeName}" /] |
+| inboundResource | [# th:utext="${activity.configuration.inboundResource}" /] |
+| inboundResourceId | [# th:utext="${activity.configuration.inboundResourceId}" /] |
+| op | [# th:utext="${activity.configuration.op}" /] |
+| outboundResource | [# th:utext="${activity.configuration.outboundResource}" /] |
+| outboundResourceConfig | [# th:utext="${activity.configuration.outboundResourceConfig}" /] |
+| outboundResourceId | [# th:utext="${activity.configuration.outboundResourceId}" /] |
+| schema | [# th:utext="${activity.configuration.schema}" /] |
+| upsert | [# th:utext="${activity.configuration.upsert}" /] |
+[/]
+[# th:if="${activity.pattern=='Unwind'}"]
+| Item | Value |
+|:---|:---|
+| unwindProperty | [# th:utext="${activity.configuration.unwindProperty}" /] |
+| outboundProperty | [# th:utext="${activity.configuration.outboundProperty}" /] |
+[/]
+[# th:if="${activity.pattern=='Transformation'}"]
+| Item | Value |
+|:---|:---|
+| transformInPlace | [# th:utext="${activity.configuration.transformInPlace}" /] |
+| upsert | [# th:utext="${activity.configuration.upsert}" /] |
+
+#### Transformation
+Get To Done
+[/]
+
+[/]
+
+

@@ -1,0 +1,32 @@
+# [[${project.name}]]
+
+[[${project.description}]]
+
+## Resources
+
+### Services
+[# th:each="resource : ${project.services}"]
+[# th:utext="'[' + ${resource.name} + ']'" /][# th:utext="'(.' + ${resource.resourceReference} + '.md)'" /]
+[/]
+### CollaborationTypes
+[# th:each="resource : ${project.collaborationTypes}"]
+[# th:utext="'[' + ${resource.name} + ']'" /][# th:utext="'(.' + ${resource.resourceReference} + '.md)'" /]
+[/]
+### Procedures
+[# th:each="resource : ${project.procedures}"]
+[# th:utext="'[' + ${resource.name} + ']'" /][# th:utext="'(.' + ${resource.resourceReference} + '.md)'" /]
+[/]
+### ScheduledEvents
+[# th:each="resource : ${project.scheduledEvents}"]
+[# th:utext="'[' + ${resource.name} + ']'" /][# th:utext="'(.' + ${resource.resourceReference} + '.md)'" /]
+[/]
+### documents
+### Types
+[# th:each="resource : ${project.types}"]
+[# th:utext="'[' + ${resource.name} + ']'" /][# th:utext="'(.' + ${resource.resourceReference} + '.md)'" /]
+[/]
+### Topics
+### Source
+[# th:each="resource : ${project.sources}"]
+[# th:utext="'[' + ${resource.name} + ']'" /][# th:utext="'(.' + ${resource.resourceReference} + '.md)'" /]
+[/]

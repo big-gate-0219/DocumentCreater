@@ -1,0 +1,16 @@
+ # [# th:utext="${type.typeName}" /]
+
+## Infomation
+
+| 項目 | 概要 |
+|:--|:--|
+| Package | [# th:utext="${type.packageName}" /] |
+| ServiceName | [# th:utext="${type.serviceName}" /] |
+| TypeName | [# th:utext="${type.typeName}" /] |
+| Role | [# th:utext="${type.role}" /] |
+
+## Properties
+
+| Name | Unique | Required | Multi | Encripted | Type |
+| :-- | :-- | :-- | :-- | :-- | :--- |[# th:each="property : ${type.properties}"]
+| [# th:utext="${property.key}" /] | [# th:utext="${property.value.unique}" /] | [# th:utext="${property.value.required}" /] | [# th:utext="${property.value.multi}" /] | [# th:utext="${property.value.encrypted}" /] | [# th:utext="${property.value.type}" /] |[/]

@@ -1,0 +1,4 @@
+# [# th:utext="${source.name}" /]
+
+Type : [# th:utext="${source.type}" /]
+
